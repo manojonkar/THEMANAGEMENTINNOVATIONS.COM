@@ -68,6 +68,8 @@
   .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1180px; margin:0 auto;}
   .logo{font-family:'Fraunces',serif; font-weight:600; font-size:19px; letter-spacing:-0.01em;}
   .logo span{color:var(--brass);}
+  .logo-link{display:flex; align-items:center;}
+  .logo-img{height:42px; width:auto; object-fit:contain;}
   nav.links{display:flex; gap:30px; font-size:13.5px; font-weight:500;}
   nav.links a{color:var(--ink-soft); transition:color .2s;}
   nav.links a:hover{color:var(--brass);}
@@ -77,7 +79,7 @@
 
   /* ===== HERO ===== */
   .hero{position:relative; overflow:hidden; padding:90px 0 70px;}
-  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:center;}
+  .hero-grid{display:block; max-width:760px;}
   .hero h1{font-size:clamp(36px,5vw,58px); line-height:1.06; margin-bottom:24px;}
   .hero p.lead{font-size:18px; max-width:480px; margin-bottom:34px;}
   .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:54px;}
@@ -97,49 +99,52 @@
 
   /* ===== PROBLEM SECTION ===== */
   .problem{padding:100px 0; background:var(--paper-deep);}
-  .problem-head{max-width:680px; margin-bottom:60px;}
-  .problem-head h2{font-size:clamp(28px,3.6vw,40px); line-height:1.18;}
-  .problem-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-  .problem-card{background:var(--paper-deep); padding:38px 32px;}
-  .problem-card .num{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--brass); margin-bottom:18px; display:block;}
-  .problem-card h3{font-size:19px; margin-bottom:12px; font-weight:600; font-family:'Inter',sans-serif;}
-  .problem-card p{font-size:14.5px;}
+  .problem-split{display:grid; grid-template-columns:1fr .9fr; gap:60px; align-items:center;}
+  .problem-head{max-width:520px; margin-bottom:0;}
+  .problem-head h2{font-size:clamp(36px,5vw,56px); line-height:1.05; margin-bottom:24px;}
+  .problem-body{font-size:17px; line-height:1.65;}
+  .problem-visual{background:var(--white); border:1px solid var(--line); padding:24px; box-shadow:var(--shadow);}
+  .problem-visual svg{width:100%; height:auto; display:block;}
+  .section-head{max-width:680px; margin-bottom:60px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,40px); line-height:1.18;}
 
   /* ===== HOW WE WORK ===== */
   .howwe{padding:100px 0;}
-  .howwe-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:70px; align-items:start;}
+  .howwe-top{display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:start; margin-bottom:64px;}
   .howwe h2{font-size:clamp(28px,3.6vw,38px); margin-bottom:22px;}
   .pull{
-    font-family:'Fraunces',serif; font-style:italic; font-size:21px;
-    color:var(--ink); border-left:2px solid var(--brass); padding-left:22px; margin-top:30px;
+    font-family:'Fraunces',serif; font-style:italic; font-size:19px;
+    color:var(--ink); border-left:2px solid var(--brass); padding-left:22px; margin-top:6px;
   }
   .pull cite{display:block; font-style:normal; font-family:'Inter',sans-serif; font-size:13px; color:var(--slate); margin-top:12px;}
-  .principles{display:flex; flex-direction:column; gap:0;}
-  .principle{display:grid; grid-template-columns:50px 1fr; gap:18px; padding:24px 0; border-top:1px solid var(--line);}
-  .principle:last-child{border-bottom:1px solid var(--line);}
-  .principle .num{font-family:'JetBrains Mono',monospace; color:var(--brass); font-size:13px; padding-top:3px;}
-  .principle h4{font-family:'Inter',sans-serif; font-weight:600; font-size:16px; margin-bottom:6px;}
-  .principle p{font-size:14px;}
 
   /* ===== LENSES ===== */
-  .lenses{padding:100px 0; background:var(--ink); color:var(--paper);}
-  .lenses .eyebrow{color:var(--brass-light);}
-  .lenses .eyebrow::before{background:var(--brass-light);}
-  .lenses h2{color:var(--paper); font-size:clamp(28px,3.6vw,38px); max-width:640px; margin-bottom:60px;}
-  .lens-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.12);}
-  .lens-card{background:var(--ink); padding:30px 24px; min-height:190px; display:flex; flex-direction:column; justify-content:space-between;}
-  .lens-card .num{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--brass-light);}
-  .lens-card h4{font-family:'Fraunces',serif; font-weight:500; font-size:17px; color:var(--paper); margin:14px 0 8px;}
-  .lens-card p{font-size:13px; color:#A8B0B6;}
+  .lenses{padding:100px 0; background:linear-gradient(180deg,#FBFAF6 0%,#F6F4EF 100%);}
+  .lenses-head{max-width:680px; margin-bottom:54px;}
+  .lenses h2{font-size:clamp(28px,3.6vw,38px); margin-bottom:18px;}
+  .lenses-intro{font-size:15.5px; max-width:560px;}
+  .lenses-body{display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:start;}
+  .lenses-visual{position:sticky; top:100px; border:1px solid var(--line); background:var(--white); padding:18px; box-shadow:var(--shadow);}
+  .lenses-visual img{width:100%; border-radius:1px;}
+  .lens-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:28px 32px;}
+  .lens-card{background:var(--white); padding:26px 24px; min-height:150px; display:flex; flex-direction:column; justify-content:space-between; border-top:2px solid var(--brass); box-shadow:0 8px 24px -16px rgba(20,31,41,0.18);}
+  .lens-card .num{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--brass);}
+  .lens-card h4{font-family:'Fraunces',serif; font-weight:500; font-size:16.5px; color:var(--ink); margin:12px 0 8px;}
+  .lens-card p{font-size:13px; color:var(--slate);}
 
   /* ===== ENGAGE STEPS ===== */
-  .engage{padding:100px 0;}
-  .engage-head{max-width:640px; margin-bottom:56px;}
-  .engage-head h2{font-size:clamp(28px,3.6vw,38px);}
-  .steps{display:flex; border-top:1px solid var(--ink); flex-wrap:wrap;}
-  .step{flex:1 1 16%; padding:26px 18px 26px 0; border-right:1px solid var(--line); position:relative;}
-  .step:last-child{border-right:none;}
-  .step .phase{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--brass); text-transform:uppercase; letter-spacing:.08em; display:block; margin-bottom:10px;}
+  .steps-visual{position:relative; padding-top:6px;}
+  .steps-line{width:100%; height:4px; display:block; margin-bottom:0;}
+  .steps{display:flex; flex-wrap:wrap; margin-top:-2px;}
+  .step{flex:1 1 16%; padding:0 18px 26px 0; position:relative;}
+  .step-dot{
+    width:38px; height:38px; border-radius:50%; background:var(--c);
+    color:var(--paper); display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500;
+    margin-bottom:18px; margin-top:-21px;
+    box-shadow:0 0 0 6px var(--paper);
+  }
+  .step .phase{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--brass); text-transform:uppercase; letter-spacing:.08em; display:block; margin-bottom:8px;}
   .step h4{font-family:'Inter',sans-serif; font-weight:600; font-size:14.5px; line-height:1.35;}
 
   /* ===== TESTIMONIALS ===== */
@@ -164,9 +169,9 @@
 
   /* ===== ECOSYSTEM ===== */
   .ecosystem{padding:90px 0;}
-  .eco-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-  .eco-card{background:var(--paper); padding:34px; display:flex; justify-content:space-between; align-items:center; transition:.2s; gap:20px;}
-  .eco-card:hover{background:var(--paper-deep);}
+  .eco-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .eco-card{background:var(--paper-deep); padding:34px; display:flex; justify-content:space-between; align-items:center; transition:.2s; gap:20px; border-left:3px solid var(--brass);}
+  .eco-card:hover{background:var(--white); box-shadow:var(--shadow); transform:translateY(-2px);}
   .eco-card h4{font-family:'Inter',sans-serif; font-weight:600; font-size:16px; margin-bottom:6px;}
   .eco-card p{font-size:13px;}
   .eco-arrow{font-size:20px; color:var(--brass); flex-shrink:0;}
@@ -228,6 +233,7 @@
   .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:50px; margin-bottom:50px;}
   .foot-logo{font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin-bottom:14px;}
   .foot-logo span{color:var(--brass);}
+  .foot-logo-img{height:38px; width:auto; object-fit:contain; margin-bottom:16px;}
   footer p{font-size:13.5px; max-width:340px;}
   .foot-col h5{font-family:'JetBrains Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--brass); margin-bottom:16px;}
   .foot-col a{display:block; font-size:13.5px; color:var(--ink-soft); margin-bottom:10px;}
@@ -242,13 +248,16 @@
   @media (max-width:980px){
     nav.links, .nav-cta{display:none;}
     .nav-toggle{display:flex;}
-    .hero-grid, .howwe-grid, .about-grid, .book-grid, .contact-grid{grid-template-columns:1fr; gap:40px;}
-    .problem-grid{grid-template-columns:1fr;}
-    .lens-grid{grid-template-columns:repeat(2,1fr);}
+    .hero-grid, .howwe-top, .about-grid, .book-grid, .contact-grid{grid-template-columns:1fr; gap:40px;}
+    .problem-split{grid-template-columns:1fr;}
+    .lens-grid{grid-template-columns:1fr;}
+    .lenses-body{grid-template-columns:1fr;}
+    .lenses-visual{position:static;}
     .eco-grid{grid-template-columns:1fr;}
     .team-grid{grid-template-columns:repeat(2,1fr);}
     .steps{flex-direction:column;}
-    .step{border-right:none; border-bottom:1px solid var(--line);}
+    .step{padding-bottom:24px;}
+    .steps-line{display:none;}
     .form-row{grid-template-columns:1fr;}
     .stat-row{gap:18px 0;}
     .stat{padding-right:18px; margin-right:18px;}
@@ -265,7 +274,7 @@
 
 <header>
   <div class="nav-inner">
-    <a href="#hero" class="logo">Management <span>Innovations</span></a>
+    <a href="#hero" class="logo-link"><img src="img-001-32d6576911.jpg" alt="Management Innovations" class="logo-img"></a>
     <nav class="links">
       <a href="#about">About</a>
       <a href="#offerings">Offerings</a>
@@ -287,7 +296,7 @@
       <p class="lead">Purpose-driven, strategy-focused organizations built for lasting success — not another framework, but a discipline of turning insight into measurable execution.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-solid">Start a conversation</a>
-        <a href="#engage" class="btn btn-line">See how leaders engage →</a>
+        <a href="#about" class="btn btn-line">See how leaders engage →</a>
       </div>
       <div class="stat-row">
         <div class="stat"><b>30+</b><span>Years of transformational experience</span></div>
@@ -295,21 +304,6 @@
         <div class="stat"><b>500+</b><span>Trainers &amp; coaches certified</span></div>
         <div class="stat"><b>10+</b><span>Countries &amp; 30+ industries</span></div>
       </div>
-    </div>
-    <div>
-      <svg class="threshold-svg" viewBox="0 0 420 460" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0" width="420" height="460" fill="none"/>
-        <path d="M30 420 L30 360 L110 360 L110 280 L190 280 L190 190 L270 190 L270 90 L390 90" stroke="#A8762E" stroke-width="2" fill="none"/>
-        <circle cx="390" cy="90" r="6" fill="#A8762E"/>
-        <circle cx="30" cy="420" r="6" fill="#141F29"/>
-        <text x="20" y="445" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6770">VISION</text>
-        <text x="330" y="75" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6770">IMPLEMENTATION</text>
-        <g stroke="#D9D3C6" stroke-width="1">
-          <line x1="0" y1="115" x2="420" y2="115"/>
-          <line x1="0" y1="230" x2="420" y2="230"/>
-          <line x1="0" y1="345" x2="420" y2="345"/>
-        </g>
-      </svg>
     </div>
   </div>
 </section>
@@ -323,48 +317,74 @@
 
 <!-- PROBLEM -->
 <section class="problem">
-  <div class="wrap">
+  <div class="wrap problem-split">
     <div class="problem-head">
       <div class="eyebrow">Where growth gets stuck</div>
-      <h2>Most organizations don't plateau because leaders lack effort. <span class="serif-em">They plateau because the system is misaligned.</span></h2>
+      <h2>Most organizations <span class="serif-em">plateau.</span></h2>
+      <p class="problem-body">Most organizations do not plateau because leaders lack effort. They plateau because the system is designed for a certain level of success only — and it needs a new organization structure and mindset to scale beyond those boundaries.</p>
     </div>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <span class="num">01</span>
-        <h3>Busy leadership, slow movement</h3>
-        <p>Capable leaders work hard, yet key decisions move too slowly because the team isn't aligned around one game, one direction, one execution discipline.</p>
-      </div>
-      <div class="problem-card">
-        <span class="num">02</span>
-        <h3>Culture silently weakens strategy</h3>
-        <p>The stated strategy may be sound, but the lived culture and routines underneath it quietly dilute ownership, trust, and follow-through.</p>
-      </div>
-      <div class="problem-card">
-        <span class="num">03</span>
-        <h3>Growth demands a new worldview</h3>
-        <p>The next leap rarely comes from more effort inside the current paradigm. It comes from sharper clarity, deeper design, and more conscious leadership.</p>
-      </div>
+    <div class="problem-visual">
+      <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ceilGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#141F29"/>
+            <stop offset="100%" stop-color="#A8762E"/>
+          </linearGradient>
+        </defs>
+        <!-- ceiling line -->
+        <line x1="20" y1="90" x2="400" y2="90" stroke="#D9D3C6" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <text x="20" y="76" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="1" fill="#8A7350">CURRENT SYSTEM CEILING</text>
+        <!-- plateaued growth curve, then breaking through -->
+        <path d="M20 280 C 80 260, 120 200, 160 150 C 190 115, 210 95, 230 92 C 260 88, 300 86, 340 60 C 365 42, 380 30, 400 18"
+          stroke="url(#ceilGrad)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- markers -->
+        <circle cx="20" cy="280" r="5" fill="#141F29"/>
+        <circle cx="230" cy="92" r="5" fill="#8A7350"/>
+        <circle cx="400" cy="18" r="6" fill="#A8762E"/>
+        <text x="10" y="300" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6770">EFFORT</text>
+        <text x="190" y="112" font-family="Fraunces, serif" font-style="italic" font-size="13" fill="#8A7350">plateau</text>
+        <text x="320" y="40" font-family="Fraunces, serif" font-style="italic" font-size="13" fill="#A8762E">new structure</text>
+        <!-- new ceiling above breakthrough -->
+        <line x1="230" y1="20" x2="400" y2="20" stroke="#A8762E" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.5"/>
+      </svg>
     </div>
   </div>
 </section>
 
-<!-- HOW WE WORK -->
+
+<!-- HOW WE WORK / PROGRESSION (merged) -->
 <section class="howwe" id="about">
-  <div class="wrap howwe-grid">
-    <div>
-      <div class="eyebrow">How we work</div>
-      <h2>From diagnosis to <span class="serif-em">disciplined implementation</span></h2>
-      <p>We partner with founders, CEOs, and leadership teams to address the root pattern — not just the visible symptom — across leadership, culture, strategy, talent, and execution.</p>
+  <div class="wrap">
+    <div class="howwe-top">
+      <div>
+        <div class="eyebrow">How we work</div>
+        <h2>From diagnosis to <span class="serif-em">disciplined implementation</span></h2>
+        <p>We partner with founders, CEOs, and leadership teams to address the root pattern — not just the visible symptom — across leadership, culture, strategy, talent, and execution. This is the progression most leaders move through, from first insight to organization-wide change.</p>
+      </div>
       <div class="pull">
         "Real transformation begins when leadership, culture, strategy, and execution start reinforcing one another."
         <cite>— Management Innovations approach</cite>
       </div>
     </div>
-    <div class="principles">
-      <div class="principle"><span class="num">01</span><div><h4>Begin with the real business problem</h4><p>We translate strong OD thinking into executive reality — stalled growth, weak alignment, leadership overload, inconsistent execution.</p></div></div>
-      <div class="principle"><span class="num">02</span><div><h4>Use world-class frameworks with practical rigor</h4><p>Drawing on Theory U, Balanced Scorecard, competitive strategy, systems thinking, and first-principle thinking.</p></div></div>
-      <div class="principle"><span class="num">03</span><div><h4>Co-create with leadership, not prescribe to it</h4><p>We work with accomplished leaders to expand perspective, sharpen choices, and build ownership for the future they want.</p></div></div>
-      <div class="principle"><span class="num">04</span><div><h4>Stay close until the shift is visible</h4><p>The work is complete only when thinking starts changing behavior, coordination, culture, and execution quality.</p></div></div>
+
+    <div class="steps-visual">
+      <svg class="steps-line" viewBox="0 0 1120 4" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#141F29"/>
+            <stop offset="100%" stop-color="#A8762E"/>
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="2" x2="1120" y2="2" stroke="url(#stepGrad)" stroke-width="2"/>
+      </svg>
+      <div class="steps">
+        <div class="step"><div class="step-dot" style="--c:#141F29;">01</div><span class="phase">Discover</span><h4>A new world of possibilities</h4></div>
+        <div class="step"><div class="step-dot" style="--c:#2B3A47;">02</div><span class="phase">Connect</span><h4>To higher self and purpose</h4></div>
+        <div class="step"><div class="step-dot" style="--c:#5B6770;">03</div><span class="phase">Strategize</span><h4>Breakthrough competitive strategy</h4></div>
+        <div class="step"><div class="step-dot" style="--c:#8A7350;">04</div><span class="phase">Execute</span><h4>Design and implement strategy</h4></div>
+        <div class="step"><div class="step-dot" style="--c:#BF8C3E;">05</div><span class="phase">Synchronize</span><h4>Strategy to individual scorecards</h4></div>
+        <div class="step"><div class="step-dot" style="--c:#A8762E;">06</div><span class="phase">Sustain</span><h4>Implement, finetune, ongoing</h4></div>
+      </div>
     </div>
   </div>
 </section>
@@ -372,7 +392,7 @@
 <!-- OFFERINGS (brief, links to other sites) -->
 <section class="ecosystem" id="offerings">
   <div class="wrap">
-    <div class="problem-head">
+    <div class="section-head">
       <div class="eyebrow">How leaders engage</div>
       <h2>Two entry points into the work</h2>
     </div>
@@ -392,35 +412,25 @@
 <!-- LENSES -->
 <section class="lenses" id="lenses">
   <div class="wrap">
-    <div class="eyebrow">Transformation system</div>
-    <h2>Eight lenses we use to build <span class="serif-em" style="color:#D9B273;">extraordinary organizations</span></h2>
-    <div class="lens-grid">
-      <div class="lens-card"><span class="num">01</span><h4>Leadership Transformation</h4><p>From ego-centric to eco-centric — from directing to co-creating.</p></div>
-      <div class="lens-card"><span class="num">02</span><h4>Culture Transformation</h4><p>Culture is the secret weapon — deliberately designed and embedded.</p></div>
-      <div class="lens-card"><span class="num">03</span><h4>Massive Transformative Purpose</h4><p>A purpose that earns head, heart, and soul.</p></div>
-      <div class="lens-card"><span class="num">04</span><h4>Breakthrough Strategy</h4><p>Sustainable competitive advantage in the eyes of the customer.</p></div>
-      <div class="lens-card"><span class="num">05</span><h4>Strategy Execution</h4><p>Translate intent into aligned action across the organization.</p></div>
-      <div class="lens-card"><span class="num">06</span><h4>Talent Partnership</h4><p>Systems that attract, develop, and retain exceptional talent.</p></div>
-      <div class="lens-card"><span class="num">07</span><h4>Sales Transformation</h4><p>From transactional selling to consultative value creation.</p></div>
-      <div class="lens-card"><span class="num">08</span><h4>Innovation Culture</h4><p>Make continuous innovation part of everyday practice.</p></div>
+    <div class="lenses-head">
+      <div class="eyebrow">Transformation system</div>
+      <h2>Eight lenses we use to build <span class="serif-em">extraordinary organizations</span></h2>
+      <p class="lenses-intro">These eight lenses work together as one integrated transformation system — not separate projects, but one coherent way of seeing the organization.</p>
     </div>
-  </div>
-</section>
-
-<!-- ENGAGE STEPS -->
-<section class="engage" id="engage">
-  <div class="wrap">
-    <div class="engage-head">
-      <div class="eyebrow">A clear progression</div>
-      <h2>From first insight to <span class="serif-em">organization-wide change</span></h2>
-    </div>
-    <div class="steps">
-      <div class="step"><span class="phase">Discover</span><h4>A new world of possibilities</h4></div>
-      <div class="step"><span class="phase">Connect</span><h4>To higher self and purpose</h4></div>
-      <div class="step"><span class="phase">Strategize</span><h4>Breakthrough competitive strategy</h4></div>
-      <div class="step"><span class="phase">Execute</span><h4>Design and implement strategy</h4></div>
-      <div class="step"><span class="phase">Synchronize</span><h4>Strategy to individual scorecards</h4></div>
-      <div class="step"><span class="phase">Sustain</span><h4>Implement, finetune, ongoing</h4></div>
+    <div class="lenses-body">
+      <div class="lenses-visual">
+        <img src="img-010-5d6d0b2edd.jpg" alt="8 Pillars of OD Transformation">
+      </div>
+      <div class="lens-grid">
+        <div class="lens-card"><span class="num">01</span><h4>Leadership Transformation</h4><p>From ego-centric to eco-centric — from directing to co-creating.</p></div>
+        <div class="lens-card"><span class="num">02</span><h4>Culture Transformation</h4><p>Culture is the secret weapon — deliberately designed and embedded.</p></div>
+        <div class="lens-card"><span class="num">03</span><h4>Massive Transformative Purpose</h4><p>A purpose that earns head, heart, and soul.</p></div>
+        <div class="lens-card"><span class="num">04</span><h4>Breakthrough Strategy</h4><p>Sustainable competitive advantage in the eyes of the customer.</p></div>
+        <div class="lens-card"><span class="num">05</span><h4>Strategy Execution</h4><p>Translate intent into aligned action across the organization.</p></div>
+        <div class="lens-card"><span class="num">06</span><h4>Talent Partnership</h4><p>Systems that attract, develop, and retain exceptional talent.</p></div>
+        <div class="lens-card"><span class="num">07</span><h4>Sales Transformation</h4><p>From transactional selling to consultative value creation.</p></div>
+        <div class="lens-card"><span class="num">08</span><h4>Innovation Culture</h4><p>Make continuous innovation part of everyday practice.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -618,7 +628,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-logo">Management <span>Innovations</span></div>
+        <img src="img-001-32d6576911.jpg" alt="Management Innovations" class="foot-logo-img">
         <p>Leadership transformation, culture transformation, strategy, execution, and organization design for founders, CEOs, and leadership teams committed to building extraordinary organizations.</p>
       </div>
       <div class="foot-col">
