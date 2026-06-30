@@ -133,19 +133,13 @@
   .lens-card p{font-size:13px; color:var(--slate);}
 
   /* ===== ENGAGE STEPS ===== */
-  .steps-visual{position:relative; padding-top:6px;}
-  .steps-line{width:100%; height:4px; display:block; margin-bottom:0;}
-  .steps{display:flex; flex-wrap:wrap; margin-top:-2px;}
-  .step{flex:1 1 16%; padding:0 18px 26px 0; position:relative;}
-  .step-dot{
-    width:38px; height:38px; border-radius:50%; background:var(--c);
-    color:var(--paper); display:flex; align-items:center; justify-content:center;
-    font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500;
-    margin-bottom:18px; margin-top:-21px;
-    box-shadow:0 0 0 6px var(--paper);
-  }
+  .steps-visual{position:relative;}
+  .journey-svg{width:100%; height:auto; display:block; margin-bottom:20px;}
+  .steps{display:flex; flex-wrap:wrap;}
+  .step{flex:1 1 16%; padding:0 18px 26px 0; position:relative; text-align:center;}
   .step .phase{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--brass); text-transform:uppercase; letter-spacing:.08em; display:block; margin-bottom:8px;}
   .step h4{font-family:'Inter',sans-serif; font-weight:600; font-size:14.5px; line-height:1.35;}
+
 
   /* ===== TESTIMONIALS ===== */
   .testimonials{padding:100px 0; background:var(--paper-deep);}
@@ -257,7 +251,7 @@
     .team-grid{grid-template-columns:repeat(2,1fr);}
     .steps{flex-direction:column;}
     .step{padding-bottom:24px;}
-    .steps-line{display:none;}
+    .journey-svg{display:none;}
     .form-row{grid-template-columns:1fr;}
     .stat-row{gap:18px 0;}
     .stat{padding-right:18px; margin-right:18px;}
@@ -368,22 +362,72 @@
     </div>
 
     <div class="steps-visual">
-      <svg class="steps-line" viewBox="0 0 1120 4" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="journey-svg" viewBox="0 0 1200 240" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#141F29"/>
             <stop offset="100%" stop-color="#A8762E"/>
           </linearGradient>
         </defs>
-        <line x1="0" y1="2" x2="1120" y2="2" stroke="url(#stepGrad)" stroke-width="2"/>
+
+        <!-- winding journey path -->
+        <path d="M70 170 C 150 170, 200 70, 280 70 C 360 70, 400 170, 490 170 C 570 170, 610 70, 700 70 C 780 70, 820 170, 910 170 C 980 170, 1040 70, 1130 70"
+          stroke="url(#stepGrad)" stroke-width="2" fill="none" stroke-dasharray="1 9" stroke-linecap="round"/>
+
+        <!-- node 1: Discover — compass -->
+        <g transform="translate(70,170)">
+          <circle r="26" fill="#141F29"/>
+          <circle r="10" fill="none" stroke="#F6F4EF" stroke-width="1.6"/>
+          <path d="M0,-7 L2.5,0 L0,7 L-2.5,0 Z" fill="#F6F4EF"/>
+          <circle r="1.6" fill="#F6F4EF"/>
+        </g>
+
+        <!-- node 2: Connect — peak & spark -->
+        <g transform="translate(280,70)">
+          <circle r="26" fill="#2B3A47"/>
+          <path d="M-9,7 L-2,-7 L3,1 L6,-3 L10,7 Z" fill="none" stroke="#F6F4EF" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="-1" cy="-10" r="1.6" fill="#C99A4E"/>
+        </g>
+
+        <!-- node 3: Strategize — target -->
+        <g transform="translate(490,170)">
+          <circle r="26" fill="#5B6770"/>
+          <circle r="10" fill="none" stroke="#F6F4EF" stroke-width="1.6"/>
+          <circle r="5.5" fill="none" stroke="#F6F4EF" stroke-width="1.4"/>
+          <circle r="1.6" fill="#F6F4EF"/>
+        </g>
+
+        <!-- node 4: Execute — blueprint -->
+        <g transform="translate(700,70)">
+          <circle r="26" fill="#8A7350"/>
+          <rect x="-9" y="-9" width="18" height="18" fill="none" stroke="#F6F4EF" stroke-width="1.6"/>
+          <line x1="-9" y1="-2" x2="9" y2="-2" stroke="#F6F4EF" stroke-width="1.2"/>
+          <line x1="-2" y1="-9" x2="-2" y2="9" stroke="#F6F4EF" stroke-width="1.2"/>
+        </g>
+
+        <!-- node 5: Synchronize — sync arrows -->
+        <g transform="translate(910,170)">
+          <circle r="26" fill="#BF8C3E"/>
+          <path d="M -8,-3 A 8,8 0 1 1 -8,3" fill="none" stroke="#F6F4EF" stroke-width="1.6"/>
+          <path d="M -8,-3 L -3,-4 L -8,-8 Z" fill="#F6F4EF"/>
+          <path d="M 8,3 A 8,8 0 1 1 8,-3" fill="none" stroke="#F6F4EF" stroke-width="1.6"/>
+          <path d="M 8,3 L 3,4 L 8,8 Z" fill="#F6F4EF"/>
+        </g>
+
+        <!-- node 6: Sustain — infinity loop -->
+        <g transform="translate(1130,70)">
+          <circle r="26" fill="#A8762E"/>
+          <path d="M -10,0 C -10,-6 -2,-6 0,0 C 2,6 10,6 10,0 C 10,-6 2,-6 0,0 C -2,6 -10,6 -10,0 Z" fill="none" stroke="#F6F4EF" stroke-width="1.6" stroke-linejoin="round"/>
+        </g>
       </svg>
+
       <div class="steps">
-        <div class="step"><div class="step-dot" style="--c:#141F29;">01</div><span class="phase">Discover</span><h4>A new world of possibilities</h4></div>
-        <div class="step"><div class="step-dot" style="--c:#2B3A47;">02</div><span class="phase">Connect</span><h4>To higher self and purpose</h4></div>
-        <div class="step"><div class="step-dot" style="--c:#5B6770;">03</div><span class="phase">Strategize</span><h4>Breakthrough competitive strategy</h4></div>
-        <div class="step"><div class="step-dot" style="--c:#8A7350;">04</div><span class="phase">Execute</span><h4>Design and implement strategy</h4></div>
-        <div class="step"><div class="step-dot" style="--c:#BF8C3E;">05</div><span class="phase">Synchronize</span><h4>Strategy to individual scorecards</h4></div>
-        <div class="step"><div class="step-dot" style="--c:#A8762E;">06</div><span class="phase">Sustain</span><h4>Implement, finetune, ongoing</h4></div>
+        <div class="step"><span class="phase">Discover</span><h4>A new world of possibilities</h4></div>
+        <div class="step"><span class="phase">Connect</span><h4>To higher self and purpose</h4></div>
+        <div class="step"><span class="phase">Strategize</span><h4>Breakthrough competitive strategy</h4></div>
+        <div class="step"><span class="phase">Execute</span><h4>Design and implement strategy</h4></div>
+        <div class="step"><span class="phase">Synchronize</span><h4>Strategy to individual scorecards</h4></div>
+        <div class="step"><span class="phase">Sustain</span><h4>Implement, finetune, ongoing</h4></div>
       </div>
     </div>
   </div>
